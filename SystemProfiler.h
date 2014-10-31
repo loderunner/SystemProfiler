@@ -33,35 +33,60 @@ extern NSString * const SystemProfileLevelDefault;
 extern NSString * const SystemProfileLevelFull;
 
 /**
- System Profile keys
+ System Profile dictionary keys
  */
 // Level 1 keys
 extern NSString * const SystemProfileKeyHardware;
 extern NSString * const SystemProfileKeyHost;
 extern NSString * const SystemProfileKeyOS;
-extern NSString * const SystemProfileKeyDisk;
-extern NSString * const SystemProfileKeyKext;
+extern NSString * const SystemProfileKeyDisks;
+extern NSString * const SystemProfileKeyKexts;
 // Level 2 keys
 extern NSString * const SystemProfileKeyHardwareMachine;
 extern NSString * const SystemProfileKeyHardwareModel;
-extern NSString * const SystemProfileKeyHardwareArchitecture;
-extern NSString * const SystemProfileKeyHardware64Bit;
 extern NSString * const SystemProfileKeyHardwareNumberOfCPUs;
 extern NSString * const SystemProfileKeyHardwareCPUFrequency;
-extern NSString * const SystemProfileKeyHardwareCPUThreadType;
 extern NSString * const SystemProfileKeyHardwareByteOrder;
 extern NSString * const SystemProfileKeyHardwareMemory;
 extern NSString * const SystemProfileKeyHardwareBusFrequency;
-extern NSString * const SystemProfileKeyHardwareL1Cache;
-extern NSString * const SystemProfileKeyHardwareL2Cache;
-extern NSString * const SystemProfileKeyHardwareL3Cache;
 extern NSString * const SystemProfileKeyHostHostname;
 extern NSString * const SystemProfileKeyHostId;
-extern NSString * const SystemProfileKeyOSName;
 extern NSString * const SystemProfileKeyOSVersion;
 extern NSString * const SystemProfileKeyOSKernelVersion;
 extern NSString * const SystemProfileKeyOSLanguage;
 extern NSString * const SystemProfileKeyDiskName;
+extern NSString * const SystemProfileKeyDiskFormat;
+extern NSString * const SystemProfileKeyDiskTotalCapacity;
+extern NSString * const SystemProfileKeyDiskAvailableCapacity;
+extern NSString * const SystemProfileKeyDiskNumberOfFiles;
+extern NSString * const SystemProfileKeyKextName;
+extern NSString * const SystemProfileKeyKextVersion;
+extern NSString * const SystemProfileKeyKextIndex;
+extern NSString * const SystemProfileKeyKextReferenceCount;
+extern NSString * const SystemProfileKeyKextRunning;
+extern NSString * const SystemProfileKeyKextAddress;
+extern NSString * const SystemProfileKeyKextSize;
+extern NSString * const SystemProfileKeyKextWired;
+extern NSString * const SystemProfileKeyKextDependencies;
+
+/**
+ System Profiler profiling properties
+ */
+extern NSString * const SystemProfilerPropKexts;
+extern NSString * const SystemProfilerPropDisks;
+extern NSString * const SystemProfilerPropHardwareMachine;
+extern NSString * const SystemProfilerPropHardwareModel;
+extern NSString * const SystemProfilerPropHardwareNumberOfCPUs;
+extern NSString * const SystemProfilerPropHardwareCPUFrequency;
+extern NSString * const SystemProfilerPropHardwareByteOrder;
+extern NSString * const SystemProfilerPropHardwareMemory;
+extern NSString * const SystemProfilerPropHardwareBusFrequency;
+extern NSString * const SystemProfilerPropHostHostname;
+extern NSString * const SystemProfilerPropHostId;
+extern NSString * const SystemProfilerPropOSName;
+extern NSString * const SystemProfilerPropOSVersion;
+extern NSString * const SystemProfilerPropOSKernelVersion;
+extern NSString * const SystemProfilerPropOSLanguage;
 
 
 
@@ -73,9 +98,9 @@ extern NSString * const SystemProfileKeyDiskName;
 
 - (NSDictionary*)systemProfile;
 
-- (void)addProperty:(NSString*)key;
+- (void)addProperty:(NSString*)prop;
 - (NSArray*)getProperties;
-- (void)removeProperty:(NSString*)key;
+- (void)removeProperty:(NSString*)prop;
 - (void)removeAllProperties;
 
 @property (nonatomic, assign) NSString* level;
