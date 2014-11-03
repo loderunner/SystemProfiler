@@ -356,7 +356,7 @@ NSDictionary* propSets = nil;
         
         if (kextsProps.count == 0)
         {
-            [profile removeObjectForKey:SystemProfileKeyDisks];
+            [profile removeObjectForKey:SystemProfileKeyKexts];
         }
     }
     
