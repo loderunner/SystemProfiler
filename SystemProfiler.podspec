@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                    * Finally, don't worry about the indent, CocoaPods strips it!
                    DESC
 
-  s.homepage     = "http://github.com/loderunner/SystemProfiler"
+  s.homepage     = "https://github.com/loderunner/SystemProfiler"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://github.com/loderunner/SystemProfiler.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/loderunner/SystemProfiler.git", :tag => "v#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
