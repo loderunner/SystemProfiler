@@ -54,6 +54,7 @@ extern NSString * const SystemProfileKeyHostId;
 extern NSString * const SystemProfileKeyOSVersion;
 extern NSString * const SystemProfileKeyOSKernelVersion;
 extern NSString * const SystemProfileKeyOSLanguage;
+extern NSString * const SystemProfileKeyDiskMountpoint;
 extern NSString * const SystemProfileKeyDiskName;
 extern NSString * const SystemProfileKeyDiskFormat;
 extern NSString * const SystemProfileKeyDiskTotalCapacity;

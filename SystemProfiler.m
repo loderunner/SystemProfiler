@@ -292,7 +292,8 @@ NSDictionary* propSets = nil;
                                                              error:NULL];
                 if (diskProps != nil)
                 {
-                    [disksProps addObject:@{SystemProfileKeyDiskFormat : diskProps[NSURLVolumeLocalizedFormatDescriptionKey],
+                    [disksProps addObject:@{SystemProfileKeyDiskMountpoint : [volume path],
+                                            SystemProfileKeyDiskFormat : diskProps[NSURLVolumeLocalizedFormatDescriptionKey],
                                             SystemProfileKeyDiskTotalCapacity : diskProps[NSURLVolumeTotalCapacityKey],
                                             SystemProfileKeyDiskAvailableCapacity : diskProps[NSURLVolumeAvailableCapacityKey],
                                             SystemProfileKeyDiskNumberOfFiles : diskProps[NSURLVolumeResourceCountKey],
@@ -391,6 +392,7 @@ NSString * const SystemProfileKeyHostHostname = @"Hostname";
 NSString * const SystemProfileKeyOSVersion = @"Version";
 NSString * const SystemProfileKeyOSKernelVersion = @"KernelVersion";
 NSString * const SystemProfileKeyOSLanguage = @"Language";
+NSString * const SystemProfileKeyDiskMountpoint = @"Mountpoint";
 NSString * const SystemProfileKeyDiskName = @"Name";
 NSString * const SystemProfileKeyDiskFormat = @"Format";
 NSString * const SystemProfileKeyDiskTotalCapacity = @"TotalCapacity";
