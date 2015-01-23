@@ -292,12 +292,39 @@ NSDictionary* propSets = nil;
                                                              error:NULL];
                 if (diskProps != nil)
                 {
-                    [disksProps addObject:@{SystemProfileKeyDiskMountpoint : [volume path],
-                                            SystemProfileKeyDiskFormat : diskProps[NSURLVolumeLocalizedFormatDescriptionKey],
-                                            SystemProfileKeyDiskTotalCapacity : diskProps[NSURLVolumeTotalCapacityKey],
-                                            SystemProfileKeyDiskAvailableCapacity : diskProps[NSURLVolumeAvailableCapacityKey],
-                                            SystemProfileKeyDiskNumberOfFiles : diskProps[NSURLVolumeResourceCountKey],
-                                            SystemProfileKeyDiskName : diskProps[NSURLVolumeNameKey]}];
+                    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+                    
+                    if ([volume path] != nil)
+                    {
+                        dict[SystemProfileKeyDiskMountpoint] = [volume path];
+                    }
+                    
+                    if (diskProps[NSURLVolumeLocalizedFormatDescriptionKey] != nil)
+                    {
+                        dict[SystemProfileKeyDiskFormat] = diskProps[NSURLVolumeLocalizedFormatDescriptionKey];
+                    }
+                    
+                    if (diskProps[NSURLVolumeTotalCapacityKey] != nil)
+                    {
+                        dict[SystemProfileKeyDiskTotalCapacity] = diskProps[NSURLVolumeTotalCapacityKey];
+                    }
+                    
+                    if (diskProps[NSURLVolumeAvailableCapacityKey] != nil)
+                    {
+                        dict[SystemProfileKeyDiskAvailableCapacity] = diskProps[NSURLVolumeAvailableCapacityKey];
+                    }
+                    
+                    if (diskProps[NSURLVolumeResourceCountKey] != nil)
+                    {
+                        dict[SystemProfileKeyDiskNumberOfFiles] = diskProps[NSURLVolumeResourceCountKey];
+                    }
+                    
+                    if (diskProps[NSURLVolumeNameKey] != nil)
+                    {
+                        dict[SystemProfileKeyDiskName] = diskProps[NSURLVolumeNameKey];
+                    }
+                    
+                    [disksProps addObject:dict];
                 }
             }
         }
